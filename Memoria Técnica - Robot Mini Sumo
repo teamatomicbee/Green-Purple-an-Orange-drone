@@ -1,0 +1,128 @@
+📋 Descripción del Proyecto
+Robot Mini Sumo autónomo desarrollado con Arduino Mini Pro, diseñado para competencias siguiendo el reglamento oficial. El robot detecta oponentes y evita salir del área de combate mediante sensores infrarrojos.
+
+🛠️ Especificaciones Técnicas
+Hardware
+Microcontrolador: Arduino Mini Pro
+
+Driver de Motores: L293D
+
+Sensores de Oponente: 3x E3Z-T61 (Digitales)
+
+Sensores de Línea: 2x Pololu QTR-1C
+
+Motores: DC con reductora
+
+Alimentación: Batería LiPo 2S
+
+Pinout Arduino Mini Pro
+Componente	Pin Arduino	Función
+Motor Izquierdo	D2, D3	IN1, IN2 L293D
+Motor Derecho	D4, D5	IN4, IN3 L293D
+Sensor Central	D8	E3Z-T61
+Sensor Izquierdo	D9	E3Z-T61
+Sensor Derecho	D10	E3Z-T61
+Línea Izquierda	D6	QTR-1C
+Línea Derecha	D7	QTR-1C
+LED Rojo	D11	Indicador
+LED Amarillo	D12	Indicador
+LED Verde	D13	Indicador
+🎯 Estrategia de Combate
+Prioridades de Comportamiento
+EVITAR LÍNEA - Máxima prioridad, retroceso y giro
+
+ATAQUE OPONENTE - Detección y ataque agresivo
+
+BÚSQUEDA - Patrones de búsqueda activa
+
+📁 Estructura del Código
+Archivos Principales
+text
+MiniSumo/
+├── MiniSumo.ino          # Código principal
+├── README.md            # Documentación
+├── docs/
+│   ├── wiring_diagram.png
+│   └── technical_specs.pdf
+└── tests/
+    ├── sensor_test.ino
+    └── motor_test.ino
+Funciones Clave
+secuenciaInicio() - Cuenta regresiva 5 segundos
+
+atacarOponente() - Estrategias de ataque
+
+evitarLinea() - Evasión de bordes
+
+buscarOponente() - Patrones de búsqueda
+
+⚙️ Configuración y Calibración
+Sensores E3Z-T61
+Tipo: Digital (0V = Detecta, 4V = No detecta)
+
+Configuración: INPUT_PULLUP
+
+Lógica Invertida: !digitalRead()
+
+Sensores QTR-1C
+Umbral Línea: Blanco = LOW, Negro = HIGH
+
+Configuración: INPUT_PULLUP
+
+Ajustes de Velocidad
+cpp
+// Velocidades máximas
+#define VEL_ATAQUE 255
+#define VEL_BUSQUEDA 180
+#define VEL_EVASION 200
+🔧 Procedimiento de Pruebas
+Test de Sensores
+cpp
+// Verificar respuesta de cada sensor
+// LEDs indican estado en tiempo real
+Test de Motores
+cpp
+// Secuencia: Adelante, Atrás, Giros
+// Verificar dirección y potencia
+🚀 Instrucciones de Uso
+Alimentación: Conectar batería 2S LiPo
+
+Inicio: Esperar secuencia de LEDs (5 seg)
+
+Operación: Robot funciona autónomamente
+
+Reset: Reiniciar alimentación
+
+📊 Esquema de Conexiones
+text
+L293D:
+  IN1 -> D2 (Motor Izq Adelante)
+  IN2 -> D3 (Motor Izq Atrás)
+  IN3 -> D5 (Motor Der Adelante)  
+  IN4 -> D4 (Motor Der Atrás)
+
+Sensores E3Z-T61:
+  Centro -> D8
+  Izquierdo -> D9
+  Derecho -> D10
+
+Sensores QTR-1C:
+  Izquierdo -> D6
+  Derecho -> D7
+🛡️ Características de Seguridad
+Timeout de combate: 3 minutos máximo
+
+Detección de línea: Evita salida del dohyo
+
+Secuencia de inicio: Cumple reglamento
+
+Reset seguro: Por corte de alimentación
+
+📈 Posibles Mejoras
+Implementar ZMP (Zigzag Motion Pattern)
+
+Añadir modo calibración desde serial
+
+Implementar estrategias adaptativas
+
+Añectar control PID para motores
