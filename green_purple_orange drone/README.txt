@@ -1,0 +1,4 @@
+R-Winner Mini Sumo Robot Govdesi by Robiduck on Thingiverse: https://www.thingiverse.com/thing:2123791
+
+Summary:
+Gövde: R-Winner Mini Sumo Robot Gövdesi Tekerler: Robi-10S Silikon Robot Tekerleği Sensörler: Pepperl Fuchs ML100-8-1000-RT/102/115 SensörTercihen; Omron Kızılötesi SensörRD40 Dijital Mesafe SensörüSharp GP2Y0D340K Dijital Uzaklık Sensörü kullanabilirsiniz. Robot Kartı: Robiduino Geliştirme KartıTercihen; Simple Mini Sumo Robot KartıRobot üzerinde 3s 11.1V 450 mAh Li-po pil bulunmaktadır. Motorlar: 6 V 400 RPM Yüksek Torklu DC Motor kullanılmıştır.Robot üzerinde 12mm ve 16mm bütün motor türlerini kullanabilirsiniz. http://www.robiduck.com/R-Winner-Mini-Sumo-Robot-Kiti,PR-1224.html
